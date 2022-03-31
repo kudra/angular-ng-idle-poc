@@ -53,6 +53,7 @@ export class AppComponent implements OnInit {
       console.log(`${this.idleState} ${new Date()}`);
       this.countdown = null;
       cd.detectChanges();
+      this.modalService.dismissAll(this.myModal);
     });
     // do something when the user has timed out
     idle.onTimeout.subscribe(() => {
