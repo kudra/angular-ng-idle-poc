@@ -1,6 +1,10 @@
 <div class="container mt-3">
   <h3>{{ name }} ng-idle Poc</h3>
-  <p>Click on the reset button and wait for {{idleTime}} seconds to test again.</p>
+  <p>
+    You will see the idle pop-up after {{ idleTime }} seconds of
+    inactivity.Click on the reset button and wait for {{ idleTime }} seconds to
+    test again.
+  </p>
   <div class="mb-2 bold">{{ idleState }}</div>
   <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
   <ng-template #mymodal let-modal>
@@ -18,7 +22,7 @@
     <div class="modal-body">
       You are idle for last {{ idleTime }} seconds . you will be logged out in
       next {{ countdown }} seconds.
-      <div>Click Ok, cross or backdrop to resume again.</div>
+      <div>Click or move your cursor to resume again.</div>
     </div>
     <div class="modal-footer">
       <button
