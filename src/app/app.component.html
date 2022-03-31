@@ -1,0 +1,33 @@
+<div class="container mt-3">
+  <h3>{{ name }} ng-idle Poc</h3>
+  <p>Click on the reset button and wait for {{idleTime}} seconds to test again.</p>
+  <div class="mb-2 bold">{{ idleState }}</div>
+  <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+  <ng-template #mymodal let-modal>
+    <div class="modal-header">
+      <h3 class="modal-title" id="modal-basic-title">You are idle</h3>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You are idle for last {{ idleTime }} seconds . you will be logged out in
+      next {{ countdown }} seconds.
+      <div>Click Ok, cross or backdrop to resume again.</div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        (click)="modal.close('Ok click')"
+      >
+        Ok
+      </button>
+    </div>
+  </ng-template>
+</div>
